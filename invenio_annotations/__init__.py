@@ -20,7 +20,7 @@
 """
 Annotations.
 
-invenio.modules.annotations
+invenio_annotations
 ---------------------------
 
 **FIXME: Outdated documentation.**

@@ -17,30 +17,16 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
-"""Annotations bundles."""
+"""Annotation config."""
 
 from __future__ import unicode_literals
 
-from invenio.ext.assets import Bundle
-from invenio_comments.bundles import css as _commentscss, \
-    js as _commentsjs
-from invenio.modules.previewer.bundles import pdftk as _pdftk
+from invenio.base import config
 
+ANNOTATIONS_ENGINE = ('invenio.modules.jsonalchemy.jsonext.engines.'
+                      'sqlalchemy:SQLAlchemyStorage')
 
-_pdftk.contents += ("js/annotations/pdf_notes_helpers.js",)
+ANNOTATIONS_ATTACHMENTS = False
 
-_commentsjs.contents += ("js/annotations/notes_popover.js",)
-_commentscss.contents += ("css/annotations/annotations.css",)
-
-js = Bundle(
-    "vendors/plupload/js/moxie.js",
-    "vendors/plupload/js/plupload.dev.js",
-    "js/annotations/annotations.js",
-    "js/annotations/plupload_helper.js",
-    filters="uglifyjs",
-    output="annotations.js",
-    weight=30,
-    bower={
-        "plupload": "latest"
-    }
-)
+ANNOTATIONS_NOTES_ENABLED = False
+ANNOTATIONS_PREVIEW_ENABLED = False

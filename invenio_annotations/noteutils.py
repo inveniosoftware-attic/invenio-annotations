@@ -33,7 +33,6 @@ from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
 from invenio.modules.accounts.models import User
 
-
 # a note location can have one of the following structures (sans markers):
 # P.1, P.1,3,7 (multiple locations), F.1a, S.1.1 (sub-locations)
 LOCATION = r'[\w\.]+(?:[\,][\w\.]+)*'

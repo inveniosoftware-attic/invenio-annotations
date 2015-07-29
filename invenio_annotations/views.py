@@ -21,20 +21,19 @@
 
 from __future__ import unicode_literals
 
+from urlparse import urlsplit
+
 from flask import Blueprint, abort, current_app, flash, g, jsonify, redirect, \
     render_template, request, url_for
-
 from flask_login import current_user, login_required
+from sqlalchemy.event import listen
 
 from invenio.base.globals import cfg
 from invenio.base.i18n import _
+from invenio.utils.washers import wash_html_id
 from invenio_comments.models import CmtRECORDCOMMENT
 from invenio_comments.views import blueprint as comments_blueprint
 from invenio_records.views import request_record
-
-from sqlalchemy.event import listen
-
-from urlparse import urlsplit
 
 from .api import add_annotation, get_annotations, get_count
 from .forms import WebPageAnnotationForm, WebPageAnnotationFormAttachments
@@ -174,8 +173,6 @@ def notes(recid):
         flash(auth_msg, 'error')
         abort(401)
 
-    from invenio.modules.annotations.api import get_annotations
-
     page = request.args.get('page', type=int)
     if cfg["ANNOTATIONS_PREVIEW_ENABLED"] and not request.is_xhr:
         # the notes will be requested again via AJAX
@@ -196,8 +193,6 @@ def notes(recid):
                  existing annotations. The full discussion is available \
                  <a href="' + url_for('comments.comments', recid=recid) +
                 '">here</a>.'), "info")
-
-    from invenio.utils.washers import wash_html_id
 
     return render_template(template,
                            notes=notes,

@@ -18,9 +18,9 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
 from flask import request
-from flask_restful import abort, Resource
+from flask_restful import Resource, abort
+from invenio_annotations.api import get_annotations, get_jsonld_multiple
 
-from invenio.modules.annotations.api import get_annotations, get_jsonld_multiple
 from invenio.modules.deposit.restful import require_header
 
 

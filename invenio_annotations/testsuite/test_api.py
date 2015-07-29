@@ -27,8 +27,8 @@ from invenio.testsuite import make_test_suite, run_test_suite, nottest, \
 
 CFG = lazy_import('invenio.base.globals.cfg')
 USER = lazy_import('invenio.modules.accounts.models.User')
-API = lazy_import('invenio.modules.annotations.api')
-NOTEUTILS = lazy_import('invenio.modules.annotations.noteutils')
+API = lazy_import('invenio_annotations.api')
+NOTEUTILS = lazy_import('invenio_annotations.noteutils')
 COMMENT = lazy_import('invenio_comments.models.CmtRECORDCOMMENT')
 
 

@@ -17,11 +17,11 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
-from wtforms import HiddenField, TextAreaField, BooleanField, validators
+from wtforms import BooleanField, HiddenField, TextAreaField, validators
 
 from invenio.base.i18n import _
-from invenio.modules.deposit.fields import FileUploadField
 from invenio.modules.deposit.field_widgets import plupload_widget
+from invenio.modules.deposit.fields import FileUploadField
 from invenio.utils.forms import InvenioBaseForm
 
 

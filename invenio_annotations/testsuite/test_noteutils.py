@@ -24,11 +24,11 @@ from invenio.testsuite import make_test_suite, run_test_suite, InvenioTestCase
 
 EXTRACT_NOTES_FROM_COMMENT = \
     lazy_import(
-        'invenio.modules.annotations.noteutils:extract_notes_from_comment')
+        'invenio_annotations.noteutils:extract_notes_from_comment')
 GET_NOTE_TITLE = \
-    lazy_import('invenio.modules.annotations.noteutils:get_note_title')
+    lazy_import('invenio_annotations.noteutils:get_note_title')
 PREPARE_NOTES = \
-    lazy_import('invenio.modules.annotations.noteutils:prepare_notes')
+    lazy_import('invenio_annotations.noteutils:prepare_notes')
 
 
 class TestExtractNotes(InvenioTestCase):

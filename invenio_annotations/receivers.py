@@ -25,6 +25,6 @@ def extract_notes(mapper, connection, target):
         from .noteutils import extract_notes_from_comment
         revs = extract_notes_from_comment(target)
         if len(revs) > 0:
-            from invenio.modules.annotations.api import add_annotation
+            from invenio_annotations.api import add_annotation
             for rev in revs:
                 add_annotation(model='annotation_note', **rev)
