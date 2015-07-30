@@ -23,12 +23,61 @@
 
 .. include:: ../README.rst
 
-Contents:
-=========
+Contents
+========
 
 .. toctree::
    :maxdepth: 2
 
+API
+===
+
+.. automodule:: invenio_annotations
+    :members:
+
+..
+    API
+    ---
+
+    .. automodule:: invenio_annotations.api
+        :members:
+
+    Forms
+    -----
+
+    .. automodule:: invenio_annotations.forms
+       :members:
+
+Models
+------
+
+.. automodule:: invenio_annotations.models
+    :members:
+
+Noteutils
+---------
+
+.. automodule:: invenio_annotations.noteutils
+    :members:
+
+..
+    Receivers
+    ---------
+
+    .. automodule:: invenio_annotations.receivers
+        :members:
+
+    RESTful
+    -------
+
+    .. automodule:: invenio_annotations.restful
+        :members:
+
+Views
+-----
+
+.. automodule:: invenio_annotations.views
+    :members:
 
 Indices and tables
 ==================
