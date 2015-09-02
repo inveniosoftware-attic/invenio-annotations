@@ -158,8 +158,8 @@ def notes(recid):
     if not cfg['ANNOTATIONS_NOTES_ENABLED']:
         return redirect(url_for('comments.comments', recid=recid))
 
-    from invenio.modules.access.local_config import VIEWRESTRCOLL
-    from invenio.modules.access.mailcookie import \
+    from invenio_access.local_config import VIEWRESTRCOLL
+    from invenio_access.mailcookie import \
         mail_cookie_create_authorize_action
     from invenio_comments.api import check_user_can_view_comments
     auth_code, auth_msg = check_user_can_view_comments(current_user, recid)
