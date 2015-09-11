@@ -21,7 +21,7 @@
 
 from __future__ import unicode_literals
 
-from invenio.base import config
+from invenio_base import config
 
 ANNOTATIONS_ENGINE = ('invenio.modules.jsonalchemy.jsonext.engines.'
                       'sqlalchemy:SQLAlchemyStorage')

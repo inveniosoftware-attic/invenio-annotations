@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of Invenio.
-# Copyright (C) 2014 CERN.
+# Copyright (C) 2014, 2015 CERN.
 #
 # Invenio is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -19,7 +19,7 @@
 
 from wtforms import BooleanField, HiddenField, TextAreaField, validators
 
-from invenio.base.i18n import _
+from invenio_base.i18n import _
 from invenio.modules.deposit.field_widgets import plupload_widget
 from invenio.modules.deposit.fields import FileUploadField
 from invenio.utils.forms import InvenioBaseForm

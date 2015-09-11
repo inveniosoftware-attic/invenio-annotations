@@ -28,8 +28,8 @@ from flask import Blueprint, abort, current_app, flash, g, jsonify, redirect, \
 from flask_login import current_user, login_required
 from sqlalchemy.event import listen
 
-from invenio.base.globals import cfg
-from invenio.base.i18n import _
+from invenio_base.globals import cfg
+from invenio_base.i18n import _
 from invenio.utils.washers import wash_html_id
 from invenio_comments.models import CmtRECORDCOMMENT
 from invenio_comments.views import blueprint as comments_blueprint

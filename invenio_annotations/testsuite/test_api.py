@@ -21,11 +21,11 @@ __revision__ = "$Id$"
 
 from datetime import datetime
 
-from invenio.base.wrappers import lazy_import
+from invenio_base.wrappers import lazy_import
 from invenio.testsuite import make_test_suite, run_test_suite, nottest, \
     InvenioTestCase
 
-CFG = lazy_import('invenio.base.globals.cfg')
+CFG = lazy_import('invenio_base.globals.cfg')
 USER = lazy_import('invenio.modules.accounts.models.User')
 API = lazy_import('invenio_annotations.api')
 NOTEUTILS = lazy_import('invenio_annotations.noteutils')
