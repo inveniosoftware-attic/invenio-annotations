@@ -30,7 +30,7 @@ from sqlalchemy.event import listen
 
 from invenio_base.globals import cfg
 from invenio_base.i18n import _
-from invenio.utils.washers import wash_html_id
+from invenio_utils.washers import wash_html_id
 from invenio_comments.models import CmtRECORDCOMMENT
 from invenio_comments.views import blueprint as comments_blueprint
 from invenio_records.views import request_record

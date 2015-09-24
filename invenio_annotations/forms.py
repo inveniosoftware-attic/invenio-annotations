@@ -22,7 +22,7 @@ from wtforms import BooleanField, HiddenField, TextAreaField, validators
 from invenio_base.i18n import _
 from invenio.modules.deposit.field_widgets import plupload_widget
 from invenio.modules.deposit.fields import FileUploadField
-from invenio.utils.forms import InvenioBaseForm
+from invenio_utils.forms import InvenioBaseForm
 
 
 class WebPageAnnotationForm(InvenioBaseForm):
