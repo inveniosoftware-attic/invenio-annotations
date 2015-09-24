@@ -30,7 +30,7 @@ import re
 from flask_login import current_user
 
 from invenio_base.i18n import _
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 from invenio.modules.accounts.models import User
 
 # a note location can have one of the following structures (sans markers):

@@ -37,6 +37,7 @@ requirements = [
     'Flask>=0.10.1',
     'six>=1.7.2',
     'invenio-access>=0.1.0',
+    'invenio-accounts>=0.1.2',
     'invenio-base>=0.1.0',
     'invenio-comments>=0.1.0',
     'invenio-utils>=0.1.1',
@@ -47,6 +48,7 @@ test_requirements = [
     'pytest-cov>=2.1.0',
     'pytest-pep8>=1.0.6',
     'coverage>=4.0.0',
+    'invenio-testing>=0.1.1',
 ]
 
 

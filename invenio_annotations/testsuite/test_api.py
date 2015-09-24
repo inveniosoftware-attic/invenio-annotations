@@ -22,11 +22,10 @@ __revision__ = "$Id$"
 from datetime import datetime
 
 from invenio_base.wrappers import lazy_import
-from invenio.testsuite import make_test_suite, run_test_suite, nottest, \
-    InvenioTestCase
+from invenio_testing import InvenioTestCase
 
 CFG = lazy_import('invenio_base.globals.cfg')
-USER = lazy_import('invenio.modules.accounts.models.User')
+USER = lazy_import('invenio_accounts.models.User')
 API = lazy_import('invenio_annotations.api')
 NOTEUTILS = lazy_import('invenio_annotations.noteutils')
 COMMENT = lazy_import('invenio_comments.models.CmtRECORDCOMMENT')
@@ -88,9 +87,3 @@ class TestJSONLD(AnnotationTestCase):
                        ["http://www.w3.org/ns/oa#hasSelector"]
                        ["http://www.w3.org/1999/02/22-rdf-syntax-ns#value"] ==
                      "P.1_T.2a.2_L.100")
-
-
-TEST_SUITE = make_test_suite(TestAnnotation, TestJSONLD)
-
-if __name__ == "__main__":
-    run_test_suite(TEST_SUITE)
