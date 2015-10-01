@@ -38,7 +38,7 @@ requirements = [
     'six>=1.7.2',
     'invenio-access>=0.1.0',
     'invenio-accounts>=0.1.2',
-    'invenio-base>=0.1.0',
+    'invenio-base>=0.3.0',
     'invenio-comments>=0.1.0',
     'invenio-utils>=0.1.1',
 ]
