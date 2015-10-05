@@ -17,12 +17,11 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
-__revision__ = "$Id$"
-
 from datetime import datetime
 
 from invenio_base.wrappers import lazy_import
-from invenio_testing import InvenioTestCase
+
+from invenio_testing import InvenioTestCase, nottest
 
 CFG = lazy_import('invenio_base.globals.cfg')
 USER = lazy_import('invenio_accounts.models.User')
