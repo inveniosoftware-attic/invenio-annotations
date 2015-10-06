@@ -40,7 +40,7 @@ requirements = [
     'invenio-accounts>=0.1.2',
     'invenio-base>=0.3.0',
     'invenio-comments>=0.1.0',
-    'invenio-utils>=0.1.1',
+    'invenio-utils>=0.2.0',
 ]
 
 test_requirements = [
