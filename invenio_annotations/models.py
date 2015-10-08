@@ -17,12 +17,15 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
+from invenio_accounts.models import User
+
 from invenio_ext.sqlalchemy import db
-from invenio.modules.accounts.models import User
+
 from invenio_records.models import Record as Bibrec
 
 
 class CmtNOTECOLLAPSED(db.Model):
+
     """Represents a CmtNOTECOLLAPSED record."""
 
     __tablename__ = 'cmtNOTECOLLAPSED'
@@ -56,4 +59,4 @@ class CmtNOTECOLLAPSED(db.Model):
                   unique=False)
 
 
-__all__ = ['CmtNOTECOLLAPSED']
+__all__ = ('CmtNOTECOLLAPSED')

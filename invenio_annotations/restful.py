@@ -18,10 +18,12 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
 from flask import request
-from flask_restful import Resource, abort
-from invenio_annotations.api import get_annotations, get_jsonld_multiple
 
-from invenio.modules.deposit.restful import require_header
+from flask_restful import Resource, abort
+
+from invenio_deposit.restful import require_header
+
+from .api import get_annotations, get_jsonld_multiple
 
 
 class AnnotationsListResource(Resource):
@@ -37,7 +39,7 @@ class AnnotationsListResource(Resource):
 
     @require_header('Content-Type', 'application/json')
     def post(self):
-        """POST method handler.
+        r"""POST method handler.
 
         Allows performing complex queries and exporting annotations in JSON-LD
         format. It accepts a JSON document as input, with the following
@@ -81,7 +83,7 @@ class AnnotationsListResource(Resource):
                                            new_context=rqj.get("new_context",
                                                                {}),
                                            format=rqj.get("ldexport", "full"))
-            except:
+            except Exception:
                 abort(400)
         return None
 

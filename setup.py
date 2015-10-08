@@ -35,12 +35,22 @@ history = open('CHANGES.rst').read()
 
 requirements = [
     'Flask>=0.10.1',
-    'six>=1.7.2',
+    'Flask-Login>=0.2.7',
+    'Flask-RESTful>=0.2.12',
+    'Flask-WTF>=0.10.2',
     'invenio-access>=0.1.0',
-    'invenio-accounts>=0.1.2',
+    'invenio-accounts>=0.2.0',
     'invenio-base>=0.3.0',
     'invenio-comments>=0.1.0',
+    'invenio-deposit>=0.2.0',
+    'invenio-ext>=0.3.1',
+    'invenio-previewer>=0.1.0',
+    'invenio-records>=0.3.3',
     'invenio-utils>=0.2.0',
+    'jsonalchemy>=0.0.0',
+    'six>=1.7.2',
+    'SQLAlchemy>=1.0',
+    'WTForms>=2.0.1',
 ]
 
 test_requirements = [

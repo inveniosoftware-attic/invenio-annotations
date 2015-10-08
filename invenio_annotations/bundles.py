@@ -21,10 +21,13 @@
 
 from __future__ import unicode_literals
 
-from invenio_ext.assets import Bundle
-from invenio.modules.previewer.bundles import pdftk as _pdftk
 from invenio_comments.bundles import css as _commentscss
 from invenio_comments.bundles import js as _commentsjs
+
+from invenio_ext.assets import Bundle
+
+from invenio_previewer.bundles import pdftk as _pdftk
+
 
 _pdftk.contents += ("js/annotations/pdf_notes_helpers.js",)
 
