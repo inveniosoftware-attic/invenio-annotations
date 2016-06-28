@@ -26,4 +26,4 @@ Authors
 
 Invenio module that adds document annotation support.
 
-- CERN <info@invenio-software.org>
+- CERN <info@inveniosoftware.org>
