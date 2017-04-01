@@ -18,8 +18,10 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
 from invenio_base.globals import cfg
-from invenio.modules.jsonalchemy.reader import Reader
-from invenio.modules.jsonalchemy.wrappers import SmartJsonLD
+
+from jsonalchemy.reader import Reader, translate
+
+from jsonalchemy.wrappers import SmartJsonLD
 
 
 class QueryIterator():
@@ -52,8 +54,8 @@ class Annotation(SmartJsonLD):
 
     @classmethod
     def create(cls, data, model='annotation'):
-        dic = Reader.translate(data, cls, model=model, master_format='json',
-                               namespace="annotationsext")
+        dic = translate(data, cls, model=model, master_format='json',
+                        namespace="annotationsext")
         cls.storage_engine.save_one(dic.dumps())
         return dic
 
@@ -136,4 +138,4 @@ def get_count(uid, target):
                                    {"public": False, "groups": []}}).count()
     public = get_annotations({"where": target,
                               "perm": {"public": True, "groups": []}}).count()
-    return {"public": public, "private": private, "total": public+private}
+    return {"public": public, "private": private, "total": public + private}

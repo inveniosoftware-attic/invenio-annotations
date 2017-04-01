@@ -29,9 +29,11 @@ import re
 
 from flask_login import current_user
 
+from invenio_accounts.models import User
+
 from invenio_base.i18n import _
-from invenio.ext.sqlalchemy import db
-from invenio.modules.accounts.models import User
+
+from invenio_ext.sqlalchemy import db
 
 # a note location can have one of the following structures (sans markers):
 # P.1, P.1,3,7 (multiple locations), F.1a, S.1.1 (sub-locations)
@@ -91,7 +93,7 @@ TEXT = r'(.+)'
 
 
 def extract_notes_from_comment(comment, bodyOnly=False):
-    """Extracts notes from a comment.
+    """Extract notes from a comment.
 
     Notes are one-line blocks of text preceded by :py:data:`MARKERS` and
     locations (page numbers, figure names etc.).
@@ -135,7 +137,7 @@ def extract_notes_from_comment(comment, bodyOnly=False):
 
 
 def get_original_comment(note):
-    """Fetches the original comment of the note; in case of hierarchic notes, it
+    """Fetche the original comment of the note; in case of hierarchic notes, it
     goes up to the parent.
 
     :param note: the note
@@ -196,7 +198,7 @@ def prepare_notes(notes):
 
 
 def note_collapse(id_bibrec, path):
-    """Collapses note category for user."""
+    """Collapse note category for user."""
     from .models import CmtNOTECOLLAPSED
     collapsed = CmtNOTECOLLAPSED(id_bibrec=id_bibrec,
                                  path=path,
@@ -204,12 +206,12 @@ def note_collapse(id_bibrec, path):
     try:
         db.session.add(collapsed)
         db.session.commit()
-    except:
+    except Exception:
         db.session.rollback()
 
 
 def note_expand(id_bibrec, path):
-    """Expands note category for user."""
+    """Expand note category for user."""
     from .models import CmtNOTECOLLAPSED
     CmtNOTECOLLAPSED.query.filter(db.and_(
         CmtNOTECOLLAPSED.id_bibrec == id_bibrec,
@@ -219,7 +221,7 @@ def note_expand(id_bibrec, path):
 
 
 def note_is_collapsed(id_bibrec, path):
-    """Checks if a note category is collapsed."""
+    """Check if a note category is collapsed."""
     from .models import CmtNOTECOLLAPSED
     return CmtNOTECOLLAPSED.query.filter(db.and_(
         CmtNOTECOLLAPSED.id_bibrec == id_bibrec,

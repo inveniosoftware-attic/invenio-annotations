@@ -20,7 +20,7 @@
 __revision__ = "$Id$"
 
 from invenio_base.wrappers import lazy_import
-from invenio.testsuite import make_test_suite, run_test_suite, InvenioTestCase
+from invenio_testing import InvenioTestCase
 
 EXTRACT_NOTES_FROM_COMMENT = \
     lazy_import(
@@ -32,6 +32,7 @@ PREPARE_NOTES = \
 
 
 class TestExtractNotes(InvenioTestCase):
+
     """Tests for comment note extraction"""
 
     def test_extract_notes_from_comment(self):
@@ -164,8 +165,3 @@ class TestExtractNotes(InvenioTestCase):
     def test_get_original_comment(self):
         # FIXME: implement
         pass
-
-TEST_SUITE = make_test_suite(TestExtractNotes)
-
-if __name__ == "__main__":
-    run_test_suite(TEST_SUITE)

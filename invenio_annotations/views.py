@@ -25,15 +25,20 @@ from urlparse import urlsplit
 
 from flask import Blueprint, abort, current_app, flash, g, jsonify, redirect, \
     render_template, request, url_for
+
 from flask_login import current_user, login_required
-from sqlalchemy.event import listen
 
 from invenio_base.globals import cfg
 from invenio_base.i18n import _
-from invenio_utils.washers import wash_html_id
+
 from invenio_comments.models import CmtRECORDCOMMENT
 from invenio_comments.views import blueprint as comments_blueprint
+
 from invenio_records.views import request_record
+
+from invenio_utils.washers import wash_html_id
+
+from sqlalchemy.event import listen
 
 from .api import add_annotation, get_annotations, get_count
 from .forms import WebPageAnnotationForm, WebPageAnnotationFormAttachments
@@ -70,7 +75,8 @@ def ping(message=""):
 @blueprint.route('/menu', methods=['GET'])
 def menu():
     """Menu page."""
-    # we need the after-login referrer to be the main page, not the modal dialog
+    # we need the after-login referrer to be the main page, not the modal
+    # dialog
     original_referrer = request.referrer
     annos = get_count(current_user.get_id(), urlsplit(original_referrer)[2])
     if not annos["total"]:
@@ -145,7 +151,8 @@ def attach():
 @login_required
 def detach():
     """Detach page."""
-    current_app.logger.info('Removal request: ' + request.values.get('file_id'))
+    current_app.logger.info(
+        'Removal request: ' + request.values.get('file_id'))
     return jsonify()
 
 
