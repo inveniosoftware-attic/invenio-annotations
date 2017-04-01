@@ -21,7 +21,7 @@
 
 from __future__ import unicode_literals
 
-from invenio.ext.assets import Bundle
+from invenio_ext.assets import Bundle
 from invenio.modules.previewer.bundles import pdftk as _pdftk
 from invenio_comments.bundles import css as _commentscss
 from invenio_comments.bundles import js as _commentsjs
